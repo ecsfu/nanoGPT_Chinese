@@ -20,6 +20,9 @@ nanoGPT：
 
 nanoGPT_Chinese基于nanoGPT，收集了一个中文医疗数据集，并进行了中文语料的训练。
 
+模型配置：
+GPTConfig(block_size=256, vocab_size=100256, n_layer=12, n_head=12, n_embd=768, dropout=0.0, bias=False)\
+参数量: 161.95M
 ## 源数据集
 [cMedQA2](https://github.com/zhangsheng93/cMedQA2) 包含约10万个医学相关问题，及对应的约20万个回答。
 
