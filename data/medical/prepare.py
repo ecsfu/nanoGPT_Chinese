@@ -64,7 +64,7 @@ if __name__=='__main__':
     n = len(data)
     train_data = data[:int(n*0.9)]
     val_data = data[int(n*0.9):]
-
+    print(data)
     # gpt4 编码
     enc = tiktoken.get_encoding("cl100k_base")
     train_ids = enc.encode_ordinary(train_data)
@@ -78,5 +78,5 @@ if __name__=='__main__':
     train_ids.tofile(os.path.join(os.path.dirname(__file__), 'train.bin'))
     val_ids.tofile(os.path.join(os.path.dirname(__file__), 'val.bin'))
 
-# train.bin has 301,966 tokens
-# val.bin has 36,059 tokens
+# train has 58,766,056 tokens
+# val has 6,571,043 tokens
