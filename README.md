@@ -13,9 +13,10 @@ nanoGPT：
     | gpt2-large  | 774M     |
     | gpt2-xl     | 1558M    |
 
-nanoGPT_Chinese基于nanoGPT，收集了一个中文医疗数据集，进行了中文语料的训练。
-## 数据集
-
+nanoGPT_Chinese基于nanoGPT，收集了一个中文医疗数据集，并进行了中文语料的训练。
+## 源数据集
+	[cMedQA2](https://github.com/hejunqing/webMedQA)  包含约10万个医学相关问题，及对应的约20万个回答。
+    webMedQA 一个医学在线问答数据集，包含6万个问题和31万个回答。
 
 ## 使用
 
