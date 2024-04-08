@@ -9,14 +9,17 @@ from datasets import load_dataset # huggingface datasets
 
 # number of workers in .map() call
 # good number to use is ~order number of cpu cores // 2
-num_proc = 8
+num_proc = 6
 
 # number of workers in load_dataset() call
 # best number might be different from num_proc above as it also depends on NW speed.
 # it is better than 1 usually though
 num_proc_load_dataset = num_proc
 
-enc = tiktoken.get_encoding("gpt2")
+enc1 = tiktoken.get_encoding("gpt2")
+
+enc = tiktoken.get_encoding("cl100k_base")
+assert enc.decode(enc.encode("hello world")) == "hello world"
 
 if __name__ == '__main__':
     # takes 54GB in huggingface .cache dir, about 8M documents (8,013,769)
