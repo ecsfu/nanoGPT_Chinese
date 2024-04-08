@@ -57,7 +57,7 @@ def prepare_data():
     with open('input.txt', 'wt', encoding='utf-8') as f:
         f.write(data)
 if __name__=='__main__':
-    # prepare_data()
+    prepare_data()
     input_file_path = 'input.txt'
     with open(input_file_path, 'r', encoding='utf-8') as f:
         data = f.read()
@@ -65,7 +65,7 @@ if __name__=='__main__':
     train_data = data[:int(n*0.9)]
     val_data = data[int(n*0.9):]
 
-    # encode with tiktoken gpt2 bpe
+    # gpt4 编码
     enc = tiktoken.get_encoding("cl100k_base")
     train_ids = enc.encode_ordinary(train_data)
     val_ids = enc.encode_ordinary(val_data)
