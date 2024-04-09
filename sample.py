@@ -34,7 +34,7 @@ ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=
 # model
 if init_from == 'resume':
     # init from a model saved in a specific directory
-    ckpt_path = os.path.join(out_dir, 'ckpt-48000.pt')
+    ckpt_path = os.path.join(out_dir, 'ckpt2-7000.pt')
     checkpoint = torch.load(ckpt_path, map_location=device)
     gptconf = GPTConfig(**checkpoint['model_args'])
     model = GPT(gptconf)
@@ -68,8 +68,8 @@ if load_meta:
     decode = lambda l: ''.join([itos[i] for i in l])
 else:
     # ok let's assume gpt-2 encodings by default
-    print("No meta.pkl found, assuming cl100k_base encodings...")
-    enc = tiktoken.get_encoding("cl100k_base")
+    print("No meta.pkl found, assuming p50k_base encodings...")
+    enc = tiktoken.get_encoding("p50k_base")
     encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
     decode = lambda l: enc.decode(l)
 
