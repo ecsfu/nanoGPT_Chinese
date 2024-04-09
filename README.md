@@ -38,7 +38,9 @@ GPTConfig(block_size=256, vocab_size=50280, n_layer=6, n_head=8, n_embd=768, dro
 ![img_6.png](img_6.png)
 
 硬件：RTX3080 12G
-训练约7000步后，达到收敛状态。（这里进行了二次训练，调小了学习率，第一次lr_decay_iters=20000，发现6000步验证集效果最好，将lr_decay_iters改为8000后，从6000步开始又训练了2000步，发现7000步时，验证loss最低）
+训练约7000步后，达到收敛状态。
+
+（这里进行了二次训练，调小了学习率，第一次lr_decay_iters=20000，发现6000步验证集效果最好，将lr_decay_iters改为8000后，从6000步开始又训练了2000步，发现7000步时，验证loss最低）
 
 ## 使用
 模型和数据集已放到如下地址：https://huggingface.co/csk66/gpt2_Chinese/tree/main
